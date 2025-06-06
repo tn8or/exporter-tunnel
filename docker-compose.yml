@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    container_name: nodeexporter
+    #    entrypoint: uvicorn main:app --host 0.0.0.0 --port 80 --reload --reload-exclude *tmp
+    restart: always
+    environment:
+      - HOSTIP=192.168.50.1
+
+    ports:
+      - 1212:9100
+    volumes:
+      - .:/app
+
+  autoheal:
+    image: willfarrell/autoheal
+    restart: always
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
