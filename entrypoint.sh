@@ -28,8 +28,6 @@ fi
 echo "Using exporter for architecture: $ARCH in version $VERSION"
 
 cat /exporters/node_exporter-$VERSION.linux-$ARCH/node_exporter |ssh ${SSHVARS} ${DEST} "mkdir -p /tmp/node_exporter && cat > /tmp/node_exporter/node_exporter"
-ssh ${SSHVARS} ${DEST} "chmod +x /tmp/node_exporter/node_exporter && /tmp/node_exporter/node_exporter --version"
+ssh ${SSHVARS} ${DEST} "chmod +x /tmp/node_exporter/node_exporter && /tmp/node_exporter/node_exporter --version && killall node_exporter || true"
 
 ssh ${SSHVARS} -L 9100:127.0.0.1:9191 ${DEST} /tmp/node_exporter/node_exporter --web.listen-address="127.0.0.1:9191"
-
-sleep 300
