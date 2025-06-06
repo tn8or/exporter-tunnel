@@ -1,0 +1,12 @@
+version: "3"
+services:
+  dataloader:
+    image: ghcr.io/tn8or/exporter-tunnel:latest
+    restart: always
+    hostname: exporter-stuerouter
+    ports:
+      - "9101:9100"
+    environment:
+      HOSTIP: "192.168.50.1"
+    volumes:
+      - /mnt/storage/sshkey:/sshkey
