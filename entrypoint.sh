@@ -3,7 +3,6 @@ source /app/vars.sh
 cp -f /app/sshkey/id_rsa /tmp/id_rsa
 chmod 400 /tmp/id_rsa
 ARCH=`ssh ${SSHVARS} ${DEST} uname -m`
-echo found architecture: "$ARCH"
 # Determine the architecture and set the variable accordingly
 # Check if the architecture is supported and set the variable
 if [ -z "$ARCH" ]; then
