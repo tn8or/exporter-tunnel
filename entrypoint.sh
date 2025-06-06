@@ -31,4 +31,4 @@ ssh ${SSHVARS} ${DEST} rm -rf /var/tmp/node_exporter
 cat /exporters/node_exporter-$VERSION.linux-$ARCH/node_exporter |ssh ${SSHVARS} ${DEST} "mkdir -p /var/tmp/node_exporter && cat > /var/tmp/node_exporter/node_exporter"
 ssh ${SSHVARS} ${DEST} "chmod +x /var/tmp/node_exporter/node_exporter && /var/tmp/node_exporter/node_exporter --version && killall node_exporter || true"
 
-ssh ${SSHVARS} -L 0.0.0.0:9100:127.0.0.1:9191 ${DEST} /var/tmp/node_exporter/node_exporter --web.listen-address="127.0.0.1:9191" --collector.qdisc
+ssh ${SSHVARS} -L 0.0.0.0:9100:127.0.0.1:9191 ${DEST} /var/tmp/node_exporter/node_exporter --web.listen-address="127.0.0.1:9191"
