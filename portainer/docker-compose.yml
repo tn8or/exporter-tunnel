@@ -1,9 +1,9 @@
 version: "3"
 services:
-  dataloader:
-    image: ghcr.io/tn8or/exporter-tunnel:latest
+  exporter-stue-router:
+    image: ghcr.io/tn8or/exporter-tunnel:main
     restart: always
-    hostname: exporter-stuerouter
+    hostname: exporter-stue-router
     ports:
       - "9101:9100"
     environment:
