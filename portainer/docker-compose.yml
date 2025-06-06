@@ -3,10 +3,39 @@ services:
   exporter-stue-router:
     image: ghcr.io/tn8or/exporter-tunnel:main
     restart: always
-    hostname: exporter-stue-router
     ports:
       - "9101:9100"
     environment:
       HOSTIP: "192.168.50.1"
+    volumes:
+      - /mnt/storage/sshkey:/app/sshkey:ro
+
+  exporter-garage-router:
+    image: ghcr.io/tn8or/exporter-tunnel:main
+    restart: always
+    ports:
+      - "9102:9100"
+    environment:
+      HOSTIP: "192.168.50.95"
+    volumes:
+      - /mnt/storage/sshkey:/app/sshkey:ro
+
+  exporter-kitchen-router:
+    image: ghcr.io/tn8or/exporter-tunnel:main
+    restart: always
+    ports:
+      - "9103:9100"
+    environment:
+      HOSTIP: "192.168.50.99"
+    volumes:
+      - /mnt/storage/sshkey:/app/sshkey:ro
+
+  exporter-hyggehost:
+    image: ghcr.io/tn8or/exporter-tunnel:main
+    restart: always
+    ports:
+      - "9105:9100"
+    environment:
+      HOSTIP: "192.168.50.2"
     volumes:
       - /mnt/storage/sshkey:/app/sshkey:ro
