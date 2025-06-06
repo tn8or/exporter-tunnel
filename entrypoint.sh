@@ -31,4 +31,5 @@ cat /exporters/node_exporter-$VERSION.linux-$ARCH/node_exporter |ssh ${SSHVARS} 
 ssh ${SSHVARS} ${DEST} "chmod +x /tmp/node_exporter/node_exporter && /tmp/node_exporter/node_exporter --version"
 
 ssh ${SSHVARS} -L 9100:127.0.0.1:9191 ${DEST} /tmp/node_exporter/node_exporter --web.listen-address="127.0.0.1:9191"
-sleep 5
+
+sleep 300

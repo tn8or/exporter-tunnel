@@ -9,4 +9,4 @@ services:
     environment:
       HOSTIP: "192.168.50.1"
     volumes:
-      - /mnt/storage/sshkey:/sshkey
+      - /mnt/storage/sshkey:/app/sshkey:ro
