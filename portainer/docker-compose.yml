@@ -39,3 +39,13 @@ services:
       HOSTIP: "192.168.50.2"
     volumes:
       - /mnt/storage/sshkey:/app/sshkey:ro
+
+  exporter-raspi:
+    image: ghcr.io/tn8or/exporter-tunnel:main
+    restart: always
+    ports:
+      - "9104:9100"
+    environment:
+      HOSTIP: "192.168.50.5"
+    volumes:
+      - /mnt/storage/sshkey:/app/sshkey:ro
