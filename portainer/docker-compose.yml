@@ -49,3 +49,23 @@ services:
       HOSTIP: "192.168.50.5"
     volumes:
       - /mnt/storage/sshkey:/app/sshkey:ro
+
+  exporter-node3:
+    image: ghcr.io/tn8or/exporter-tunnel:main
+    restart: always
+    ports:
+      - "9106:9100"
+    environment:
+      HOSTIP: "10.6.0.4"
+    volumes:
+      - /mnt/storage/sshkey:/app/sshkey:ro
+
+  exporter-node4:
+    image: ghcr.io/tn8or/exporter-tunnel:main
+    restart: always
+    ports:
+      - "9107:9100"
+    environment:
+      HOSTIP: "10.6.0.5"
+    volumes:
+      - /mnt/storage/sshkey:/app/sshkey:ro
