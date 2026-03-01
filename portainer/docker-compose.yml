@@ -4,7 +4,7 @@ services:
     image: ghcr.io/tn8or/exporter-tunnel:main
     restart: always
     ports:
-      - "9101:9100"
+      - "9101:9191"
     environment:
       HOSTIP: "192.168.50.1"
     volumes:
@@ -14,7 +14,7 @@ services:
     image: ghcr.io/tn8or/exporter-tunnel:main
     restart: always
     ports:
-      - "9102:9100"
+      - "9102:9191"
     environment:
       HOSTIP: "192.168.50.26"
     volumes:
@@ -24,7 +24,7 @@ services:
     image: ghcr.io/tn8or/exporter-tunnel:main
     restart: always
     ports:
-      - "9103:9100"
+      - "9103:9191"
     environment:
       HOSTIP: "192.168.50.25"
     volumes:
@@ -34,7 +34,7 @@ services:
     image: ghcr.io/tn8or/exporter-tunnel:main
     restart: always
     ports:
-      - "9105:9100"
+      - "9105:9191"
     environment:
       HOSTIP: "192.168.50.2"
     volumes:
@@ -44,7 +44,7 @@ services:
     image: ghcr.io/tn8or/exporter-tunnel:main
     restart: always
     ports:
-      - "9104:9100"
+      - "9104:9191"
     environment:
       HOSTIP: "192.168.50.5"
     volumes:
