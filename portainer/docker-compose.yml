@@ -16,7 +16,7 @@ services:
     ports:
       - "9102:9100"
     environment:
-      HOSTIP: "192.168.50.26"
+      HOSTIP: "192.168.50.127"
     volumes:
       - /mnt/storage/sshkey:/app/sshkey:ro
 
@@ -26,7 +26,7 @@ services:
     ports:
       - "9103:9100"
     environment:
-      HOSTIP: "192.168.50.25"
+      HOSTIP: "192.168.50.120"
     volumes:
       - /mnt/storage/sshkey:/app/sshkey:ro
 
